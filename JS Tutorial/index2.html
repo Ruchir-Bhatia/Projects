@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bar Graph</title>
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+      }
+      canvas {
+        border: 5px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center><canvas id="barGraph" width="700" height="600"></canvas></center>
+
+    <script>
+      var canvas = document.getElementById("barGraph");
+      var c = canvas.getContext("2d");
+      var data = [12, 30, 15, 87, 53, 65];
+      c.fillStyle = "#DCDCDC";
+      c.fillRect(0, 0, 700, 600);
+
+      var colors = ["orange", "green", "violet", "yellow", "cyan", "red"];
+      for(var x = 0; x < data.length; x++){
+        c.fillStyle = colors[x];
+        var dp = data[x];
+        c.fillRect(80 + x * 100, 460 - (5 * dp), 50, (5 * dp));
+      }
+
+      var labels = ["Apple", "Orange", "Banana", "Kiwifruit", "Mango", "papaya"];
+      c.fillStyle = "darkred";
+      c.font = "11pt sans-serif";
+      for(var i = 0; i < labels.length; i++){
+        c.fillText(labels[i], 90 + 100 * i, 475);
+      }
+
+      for(var j = 0; j < data.length; j++) {
+        var dp = data[j];
+        c.fillText(data[j], 45, 460 - (5 * dp));
+      }
+
+      c.fillStyle = "blue";
+      var title = "Fruits Consumed";
+      c.font = "25pt sans-serif";
+      c.fillText(title, 270, 530);
+
+      c.fillStyle = "black";
+      c.lineWidth = 2;
+      c.moveTo(65, 10);
+      c.lineTo(65, 460);
+      c.lineTo(640, 460);
+      c.strokeStyle = "black";
+      c.stroke();
+    </script>
+  </body>
+</html>

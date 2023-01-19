@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bouncing Ball</title>
+    <style>
+      canvas {
+        background-color: pink;
+        border: 5px solid black;
+      }
+    </style>
+  </head>
+  <body onload = "animate()">
+    <center><canvas id="myCanvas" height="600" width="1000"></canvas></center>
+    <script>
+      var animation;
+      var x = 125;
+      var y = 125;
+      var r = 40;
+      var boardx = 1000;
+      var boardy = 600;
+      var dx = 2;
+      var dy = 2;
+
+      function drawBall() {
+        var canvas = document.getElementById("myCanvas");
+        var c = canvas.getContext("2d");
+        c.clearRect(0, 0, 1000, 600);
+
+        x = x + dx;
+        y = y + dy;
+
+        c.beginPath();
+        c.arc(x, y, r, 0, 2*Math.PI);
+        c.fillStyle = "#16A085";
+        c.fill();
+        c.stroke();
+
+        if(y > (boardy - r) || y < r){
+          dy = 0 - dy;
+        }
+        if(x > (boardx - r) || x < r){
+          dx = 0 - dx;
+        }
+      }
+
+      function animate() {
+        clearInterval(animation);
+        setInterval(drawBall, 10);
+      }
+    </script>
+
+  </body>
+</html>

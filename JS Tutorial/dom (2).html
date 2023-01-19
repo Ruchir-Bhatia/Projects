@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <title>Student's Records</title>
+  <style>
+    h1 {
+      text-align: center;
+      background-color: yellow;
+      padding: 10px;
+    }
+
+    pre {
+      text-align: center;
+      font-size: 20px;
+      border: 5px solid black;
+    }
+  </style>
+  <h1><b>Student's Records</b></h1>
+  <pre>
+      <script>
+        function myFun() {
+          var a = document.form1.txtname.value;
+          document.getElementById("demoname").innerHTML=a;
+
+          var b = document.form1.txtprn.value;
+          document.getElementById("demoprn").innerHTML=b;
+
+          var c = document.form1.branch.value;
+          document.getElementById("demobranch").innerHTML=c;
+        }
+      </script>
+      <script type="text/javascript">
+        function bgchange(bg) {
+          document.body.style.background = bg;
+        }
+      </script>
+      <table width = "50" height = "30">
+        <tr>
+          <td onmouseover="bgchange('orange')"
+              onmouseout="bgchnage('transparent')"
+              bgcolor = 'orange'>
+          </td>
+          <td onmouseover="bgchange('cyan')"
+              onmouseout="bgchange('transparent')"
+              bgcolor = 'cyan'>
+          </td>
+          <td onmouseover="bgchange('green')"
+              onmouseout="bgchange('transparent')"
+              bgcolor = 'green'>
+          </td>
+        </tr>
+      </table>
+  </head>
+      <body>
+        <h1>Student's Information</h1>
+        <table align="center" id="tbl" width="200">
+          <form name="form1">
+          <tr>
+            <td width="200">Name: </td>
+            <td><input type="text" name="txtname"></td>
+          </tr>
+          <tr>
+            <td width="200">PRN: </td>
+            <td><input type="text" name="txtprn"></td>
+          </tr>
+          <tr>
+            <td width="200">Branch: </td>
+            <td>Comp. Engineering: <input type="radio" name="branch" value="Comp">
+            <br>Info. Technology: <input type="radio" name="branch" value="IT">
+            <br>Mech. Engineering: <input type="radio" name="Mech" value=""></td>
+          </tr>
+          </form>
+        </table>
+        <center><button style= "font-size: 14" type="button" onclick='return myfun, alert("You have submitted successfully.")'>Submit</button></center>
+        <table border="2" align="center">
+          <tr>
+            <th width="120">Student Info.</th>
+          </tr>
+          <tr>
+            <td width="135" >Name: </td>
+            <td width="135"><font face="century" id="demoname"></font></td>
+          </tr>
+          <tr>
+            <td width="135" >PRN: </td>
+            <td width="135"><font face="century" id="demoprn"></font></td>
+          </tr>
+          <tr>
+            <td width="135" >Branch: </td>
+            <td width="135"><font face="century" id="dembranch"></font></td>
+          </tr>
+        </table>
+      </body>
+  </pre>
+
+</html>
